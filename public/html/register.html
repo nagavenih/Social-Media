@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Social Connect</title>
+    <link rel="stylesheet" href="../stylesheets/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html">
+            <img src="logo.png" alt="SC" class="logo">
+        </a>
+       
+    </nav>
+
+    <header class="header">
+        <h2>Register</h2>
+    </header>
+
+    <div class="container">
+        <form id="registerForm" class="register-form">
+            <input type="text" id="firstname" placeholder="First Name" required>
+            <input type="text" id="lastname" placeholder="Last Name" required>
+            <input type="text" id="username" placeholder="User Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <input type="password" id="confpassword" placeholder="Confirm Password" required>
+            <div class="error" style="color: red; margin-bottom: 10px;"></div> 
+            <input type="submit" value="register">
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2024 Social Connect. All Rights Reserved.</p>
+    </footer>
+    <script type="module" src="../scripts/main.js"></script></body>
+    <script type="module" src="../scripts/user.js"></script></body>
+</html>

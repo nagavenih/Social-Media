@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../stylesheets/styles.css">
+    <title>Password Reset</title>
+    <style>
+        
+        input, button {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 10px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .message {
+            color: red;
+            margin-top: 10px;
+        }
+        .reset-button {
+            display: none;
+            margin-top: 10px;
+        }
+        .password-container {
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="logo.png" alt="Logo"></a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Password Reset</h2>
+        <form class="reset-form" id="resetForm">
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+            <input type="submit" value="Search" id="searchButton">
+            <div class="message" id="message"></div>
+            <button type="button" class="reset-button" id="resetButton">Go ahead and reset your password</button>
+        </form>
+
+        <div class="password-container" id="passwordContainer">
+            <p id="userMessage"></p>
+            <label for="newPassword">New Password:</label>
+            <input type="password" id="newPassword" placeholder="Enter new password" required>
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" placeholder="Confirm new password" required>
+            <div class="message" id="passwordMessage"></div>
+            <button type="button" id="submitNewPassword">Submit New Password</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="../scripts/main.js"></script>
+    <script>
+        document.getElementById('resetForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+
+            const email = document.getElementById('email').value;
+            const messageDiv = document.getElementById('message');
+            const resetButton = document.getElementById('resetButton');
+            const passwordContainer = document.getElementById('passwordContainer');
+            const userMessage = document.getElementById('userMessage');
+
+            
+            const users = [
+                { email: "nagavenih143@gmail.com" },
+                
+            ];
+
+            
+            const userFound = users.some(user => user.email === email);
+
+            if (userFound) {
+                messageDiv.textContent = ''; 
+                document.getElementById('email').disabled = true; 
+                resetButton.style.display = 'none'; 
+                passwordContainer.style.display = 'block'; 
+                userMessage.textContent = 'Hi User, go ahead and enter your new password:'; 
+            } else {
+                messageDiv.textContent = 'User not found. Please check the email and try again.';
+                resetButton.style.display = 'none'; 
+                document.getElementById('email').disabled = false; 
+                passwordContainer.style.display = 'none'; 
+            }
+        });
+
+        document.getElementById('submitNewPassword').addEventListener('click', function() {
+            const newPassword = document.getElementById('newPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const passwordMessage = document.getElementById('passwordMessage');
+
+            if (newPassword === confirmPassword) {
+                passwordMessage.textContent = 'Password reset successful!';
+                passwordMessage.style.color = 'green';
+                
+            } else {
+                passwordMessage.textContent = 'Passwords do not match. Please try again.';
+                passwordMessage.style.color = 'red';
+            }
+        });
+    </script>
+</body>
+</html>

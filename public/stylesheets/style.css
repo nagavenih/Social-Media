@@ -1,0 +1,91 @@
+body {
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    background-color: #f0f0f0;
+}
+
+.login {
+    background-image: url('/public/images/login.webp'); 
+}
+
+.register {
+    background-image: url('/public/images/image.jpeg'); 
+}
+.post {
+    background-image: url('/public/images/image.jpeg'); 
+
+
+}
+
+
+nav {
+    background-color: #393131;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 18px;
+}
+
+nav a:hover {
+    color: #f1c40f;
+}
+
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    width: 20%;
+    border-radius: 4px;
+}
+
+
+h1, h2, h3 {
+    color: #333;
+}
+
+p {
+    line-height: 1.6;
+    color: #555;
+}
+
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+}
+
